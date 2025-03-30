@@ -49,6 +49,43 @@
         tap-ms = <100>;
     };
 
+    macros {
+        brc: brc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LBRC &kp RBRC &kp LEFT>;
+            label = "BRC";
+        };
+
+        bkt: bkt {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LBKT &kp RBKT &kp LEFT>;
+            label = "BKT";
+        };
+
+        par: par {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LPAR &kp RPAR &kp LEFT>;
+            label = "PAR";
+        };
+
+        ltgt: ltgt {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LT &kp GT &kp LEFT>;
+            label = "LTGT";
+        };
+
+        eqgt: eqgt {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL &kp GT &kp LEFT>;
+            label = "EQGT";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -78,10 +115,10 @@
 
         control {
             bindings = <
-&kp LA(TAB)     &kp LS(LA(F9))  &kp LC(LEFT)  &kp UP_ARROW    &kp LC(RIGHT)  &kp PAGE_UP                      &trans          &trans      &kp LBRC         &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS  &kp LESS_THAN  &trans
-&kp DEL         &trans          &kp LEFT      &kp DOWN        &kp RIGHT      &kp LC(RBKT)             &trans  &trans  &trans  &kp C_MUTE  &mkp LCLK        &mkp MCLK         &mkp RCLK             &kp SEMICOLON  &kp GRAVE
-&kp LEFT_SHIFT  &kp LS(LC(Z))   &kp HOME      &kp LS(LA(F6))  &kp END        &kp PAGE_DOWN  &trans            &trans          &trans      &kp EXCLAMATION  &kp C_VOL_UP      &kp C_VOL_DN          &kp QUESTION   &trans
-                                              &trans          &trans         &trans                                           &to 5       &kp LS(ENTER)    &trans
+&kp LA(TAB)     &kp LS(LA(F9))  &kp LC(LEFT)  &kp UP_ARROW    &kp LC(RIGHT)  &kp PAGE_UP                      &trans          &trans       &kp LBRC         &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS  &kp LESS_THAN  &trans
+&kp DEL         &trans          &kp LEFT      &kp DOWN        &kp RIGHT      &kp LC(RBKT)             &trans  &trans  &trans  &kp C_MUTE   &mkp LCLK        &mkp MCLK         &mkp RCLK             &kp SEMICOLON  &kp GRAVE
+&kp LEFT_SHIFT  &kp LS(LC(Z))   &kp HOME      &kp LS(LA(F6))  &kp END        &kp PAGE_DOWN  &trans            &trans          &trans       &kp EXCLAMATION  &kp C_VOL_UP      &kp C_VOL_DN          &kp QUESTION   &trans
+                                              &trans          &trans         &trans                                           &bootloader  &kp LS(ENTER)    &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -91,10 +128,10 @@
         symbol {
             display-name = "SYMBOL";
             bindings = <
-&kp LA(TAB)  &kp PLUS      &kp MINUS       &kp ASTERISK  &kp ASTERISK  &kp PRCNT                            &mmv MOVE_UP                     &kp PIPE      &kp RIGHT_BRACE       &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp GREATER_THAN  &kp BSPC
-&kp DEL      &kp NUMBER_1  &kp NUMBER_2    &kp NUMBER_3  &kp NUMBER_4  &kp N5               &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp NUMBER_6  &kp N7                &kp N8             &kp N9                 &kp N0            &kp DOUBLE_QUOTES
-&kp LSHIFT   &kp AT_SIGN   &kp UNDERSCORE  &kp HASH      &kp TILDE     &kp CARET  &trans                    &mmv MOVE_DOWN                   &kp DOLLAR    &kp NON_US_BACKSLASH  &kp COMMA          &kp PERIOD             &kp SLASH         &trans
-                                           &trans        &trans        &trans                                                                &trans        &trans                &trans
+&kp LA(TAB)  &kp PLUS      &kp MINUS       &kp ASTERISK  &kp ASTERISK  &kp PRCNT                              &mmv MOVE_UP                     &kp PIPE      &kp RIGHT_BRACE       &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp GREATER_THAN  &kp BSPC
+&kp DEL      &kp NUMBER_1  &kp NUMBER_2    &kp NUMBER_3  &kp NUMBER_4  &kp N5                 &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp NUMBER_6  &kp N7                &kp N8             &kp N9                 &kp N0            &kp DOUBLE_QUOTES
+&kp LSHIFT   &kp AT_SIGN   &kp UNDERSCORE  &kp HASH      &kp TILDE     &kp CARET    &trans                    &mmv MOVE_DOWN                   &kp DOLLAR    &kp NON_US_BACKSLASH  &kp COMMA          &kp PERIOD             &kp SLASH         &trans
+                                           &trans        &trans        &bootloader                                                             &trans        &trans                &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -103,10 +140,10 @@
         fn {
             display-name = "FN";
             bindings = <
-&kp LA(TAB)     &kp F11  &kp F12  &kp LS(LA(F3))  &kp LS(LA(F4))  &kp LS(LA(F5))                                &mmv MOVE_UP                     &trans       &trans                &trans       &trans      &trans  &trans
-&kp LS(LA(F7))  &kp F1   &kp F2   &kp F3          &kp F4          &kp F5                        &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &bootloader  &kp LS(LA(NUMBER_1))  &trans       &trans      &trans  &trans
-&kp LA(LS(F8))  &kp F6   &kp F7   &kp F8          &kp F9          &kp F10         &kp C_MUTE                    &mmv MOVE_DOWN                   &trans       &trans                &bootloader  &sys_reset  &trans  &trans
-                                  &trans          &trans          &trans                                                                         &bootloader  &trans                &trans
+&kp LA(TAB)     &kp F11  &kp F12  &kp LS(LA(F3))  &kp LS(LA(F4))  &kp LS(LA(F5))                                &mmv MOVE_UP                     &trans  &brc                  &bkt    &par    &ltgt   &trans
+&kp LS(LA(F7))  &kp F1   &kp F2   &kp F3          &kp F4          &kp F5                        &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &trans  &kp LS(LA(NUMBER_1))  &trans  &trans  &eqgt   &trans
+&kp LA(LS(F8))  &kp F6   &kp F7   &kp F8          &kp F9          &kp F10         &kp C_MUTE                    &mmv MOVE_DOWN                   &trans  &trans                &trans  &trans  &trans  &trans
+                                  &trans          &trans          &trans                                                                         &to 5   &trans                &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
