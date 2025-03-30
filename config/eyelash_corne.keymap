@@ -115,10 +115,10 @@
 
         control {
             bindings = <
-&kp LA(TAB)     &kp LS(LA(F9))  &kp LC(LEFT)  &kp UP_ARROW    &kp LC(RIGHT)  &kp PAGE_UP                      &trans          &trans       &kp LBRC         &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS  &kp LESS_THAN  &trans
-&kp DEL         &trans          &kp LEFT      &kp DOWN        &kp RIGHT      &kp LC(RBKT)             &trans  &trans  &trans  &kp C_MUTE   &mkp LCLK        &mkp MCLK         &mkp RCLK             &kp SEMICOLON  &kp GRAVE
-&kp LEFT_SHIFT  &kp LS(LC(Z))   &kp HOME      &kp LS(LA(F6))  &kp END        &kp PAGE_DOWN  &trans            &trans          &trans       &kp EXCLAMATION  &kp C_VOL_UP      &kp C_VOL_DN          &kp QUESTION   &trans
-                                              &trans          &trans         &trans                                           &bootloader  &kp LS(ENTER)    &trans
+&kp LA(TAB)     &kp LS(LA(F9))  &kp LC(LEFT)  &kp UP_ARROW    &kp LC(RIGHT)  &kp PAGE_UP                              &mmv MOVE_UP                     &trans       &kp LBRC         &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS  &kp LESS_THAN  &trans
+&kp DEL         &trans          &kp LEFT      &kp DOWN        &kp RIGHT      &kp LC(RBKT)             &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp C_MUTE   &mkp LCLK        &mkp MCLK         &mkp RCLK             &kp SEMICOLON  &kp GRAVE
+&kp LEFT_SHIFT  &kp LS(LC(Z))   &kp HOME      &kp LS(LA(F6))  &kp END        &kp PAGE_DOWN  &trans                    &mmv MOVE_DOWN                   &trans       &kp EXCLAMATION  &kp C_VOL_UP      &kp C_VOL_DN          &kp QUESTION   &trans
+                                              &trans          &trans         &trans                                                                    &bootloader  &kp LS(ENTER)    &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -159,6 +159,15 @@
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+
+        layer_6 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans          &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans                                    &trans  &trans  &trans
+            >;
         };
     };
 };
