@@ -8,6 +8,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
+
 // #include "rgb_by_layer.h"  // 注释掉以禁用RGB层切换功能
 
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
@@ -129,7 +130,7 @@
         symbol {
             display-name = "SYMBOL";
             bindings = <
-&kp LA(TAB)  &kp PLUS      &kp MINUS       &kp ASTERISK  &kp ASTERISK  &kp PRCNT                              &mmv MOVE_UP                     &kp PIPE      &kp RIGHT_BRACE       &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp GREATER_THAN  &kp BSPC
+&kp LA(TAB)  &kp PLUS      &kp MINUS       &kp ASTERISK  &kp PRCNT     &kp AMPS                               &mmv MOVE_UP                     &kp PIPE      &kp RIGHT_BRACE       &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp GREATER_THAN  &kp BSPC
 &kp DEL      &kp NUMBER_1  &kp NUMBER_2    &kp NUMBER_3  &kp NUMBER_4  &kp N5                 &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp NUMBER_6  &kp N7                &kp N8             &kp N9                 &kp N0            &kp DOUBLE_QUOTES
 &kp LSHIFT   &kp AT_SIGN   &kp UNDERSCORE  &kp HASH      &kp TILDE     &kp CARET    &trans                    &mmv MOVE_DOWN                   &kp DOLLAR    &kp NON_US_BACKSLASH  &kp COMMA          &kp PERIOD             &kp SLASH         &trans
                                            &trans        &trans        &bootloader                                                             &trans        &trans                &trans
@@ -144,7 +145,7 @@
 &kp LA(TAB)     &kp F11  &kp F12  &kp LS(LA(F3))  &kp LS(LA(F4))  &kp LS(LA(F5))                                &mmv MOVE_UP                     &trans  &brc                  &bkt    &par    &ltgt   &trans
 &kp LS(LA(F7))  &kp F1   &kp F2   &kp F3          &kp F4          &kp F5                        &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &trans  &kp LS(LA(NUMBER_1))  &trans  &trans  &eqgt   &trans
 &kp LA(LS(F8))  &kp F6   &kp F7   &kp F8          &kp F9          &kp F10         &kp C_MUTE                    &mmv MOVE_DOWN                   &trans  &trans                &trans  &trans  &trans  &trans
-                                  &trans          &trans          &trans                                                                         &to 5   &trans                &trans
+                                  &trans          &trans          &trans                                                                         &to 6   &trans                &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
