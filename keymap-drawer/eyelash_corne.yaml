@@ -152,8 +152,8 @@ layers:
   - +
   - {t: '-', s: _}
   - '*'
-  - '*'
   - '%'
+  - '&'
   - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
   - '|'
   - '}'
@@ -242,7 +242,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
-  - {t: BT&RGB, h: toggle}
+  - {t: '6', h: toggle}
   - {type: held alternate}
   - {t: '$$mdi:transfer$$', type: trans}
   BT&RGB:
