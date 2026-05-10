@@ -109,7 +109,7 @@
 &kp TAB    &kp Q  &kp W  &kp E      &kp R      &kp T                               &kp UP                &kp Y        &kp U        &kp I       &kp O    &kp P         &kp ESC
 &kp BSPC   &kp A  &kp S  &kp D      &kp F      &kp G                     &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &kp J        &kp K       &kp L    &kp LS(SEMI)  &kp SQT
 &kp LSHFT  &kp Z  &kp X  &kp C      &kp V      &kp B        &kp SPACE              &kp DOWN              &kp N        &kp M        &kp COMMA   &kp DOT  &kp EQUAL     &kp LGUI
-                         &kp LCTRL  &kp SPACE  &lt 3 ENTER                                               &lt 5 ENTER  &lt 4 ENTER  &kp LSHIFT
+                         &kp LCTRL  &kp SPACE  &lt 4 ENTER                                               &lt 5 ENTER  &lt 3 ENTER  &kp LSHIFT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
@@ -118,7 +118,7 @@
         control {
             bindings = <
 &kp LA(TAB)     &kp LS(LA(F9))  &kp LC(LEFT)  &kp UP_ARROW    &kp LC(RIGHT)  &kp PAGE_UP                              &mmv MOVE_UP                     &trans       &kp LBRC         &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS  &kp LESS_THAN  &trans
-&kp DEL         &trans          &kp LEFT      &kp DOWN        &kp RIGHT      &kp LC(RBKT)             &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp C_MUTE   &mkp LCLK        &mkp MCLK         &mkp RCLK             &kp SEMICOLON  &kp GRAVE
+&kp DEL         &kp LEFT_SHIFT  &kp LEFT      &kp DOWN        &kp RIGHT      &kp LC(RBKT)             &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp C_MUTE   &mkp LCLK        &mkp MCLK         &mkp RCLK             &kp SEMICOLON  &kp GRAVE
 &kp LEFT_SHIFT  &kp LS(LC(Z))   &kp HOME      &kp LS(LA(F6))  &kp END        &kp PAGE_DOWN  &trans                    &mmv MOVE_DOWN                   &trans       &kp EXCLAMATION  &kp C_VOL_UP      &kp C_VOL_DN          &kp QUESTION   &trans
                                               &trans          &trans         &trans                                                                    &bootloader  &kp LS(ENTER)    &trans
             >;
