@@ -46,7 +46,7 @@ layers:
   - $$mdi:apple-keyboard-control$$
   - {t: '$$mdi:keyboard-space$$', h: CONTROL}
   - {t: '$$mdi:keyboard-return$$', h: FN}
-  - {t: GAME, h: toggle}
+  - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: '$$mdi:keyboard-return$$', h: SYMBOL}
   - $$mdi:apple-keyboard-shift$$
   GAME:
@@ -94,9 +94,9 @@ layers:
   - LGUI
   - $$mdi:apple-keyboard-control$$
   - $$mdi:keyboard-space$$
-  - {t: '$$mdi:keyboard-return$$', h: FN}
-  - {t: '$$mdi:keyboard-return$$', h: BT&RGB}
   - {t: '$$mdi:keyboard-return$$', h: SYMBOL}
+  - {t: QWERT, h: toggle}
+  - {t: '$$mdi:keyboard-return$$', h: FN}
   - $$mdi:apple-keyboard-shift$$
   CONTROL:
   - Alt+$$mdi:keyboard-tab$$
@@ -192,8 +192,8 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - $$mdi:progress-download$$
-  - {t: QWERT, h: toggle}
+  - {t: '$$mdi:progress-download$$', type: held alternate}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   FN:
@@ -242,8 +242,8 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: GAME, h: toggle}
+  - {t: BT&RGB, h: toggle, type: held alternate}
   - {t: '$$mdi:transfer$$', type: trans}
   BT&RGB:
   - {h: '$$mdi:arrow-down-bold$$', s: '$$mdi:bluetooth-connect$$'}
@@ -291,6 +291,6 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: QWERT, h: toggle, type: held}
   - {t: '$$mdi:transfer$$', type: trans}
+  - {t: QWERT, h: toggle}
   - {t: '$$mdi:transfer$$', type: trans}
