@@ -94,9 +94,9 @@ layers:
   - LGUI
   - $$mdi:apple-keyboard-control$$
   - $$mdi:keyboard-space$$
-  - {t: '$$mdi:keyboard-return$$', h: SYMBOL}
-  - {t: '$$mdi:keyboard-return$$', h: BT&RGB}
   - {t: '$$mdi:keyboard-return$$', h: FN}
+  - {t: '$$mdi:keyboard-return$$', h: BT&RGB}
+  - {t: '$$mdi:keyboard-return$$', h: SYMBOL}
   - $$mdi:apple-keyboard-shift$$
   CONTROL:
   - Alt+$$mdi:keyboard-tab$$
@@ -113,7 +113,7 @@ layers:
   - <
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:backspace-reverse-outline$$
-  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:apple-keyboard-shift$$
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-down-bold$$
   - $$mdi:arrow-right-bold$$
@@ -192,7 +192,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:progress-download$$', type: held alternate}
+  - $$mdi:progress-download$$
   - {t: QWERT, h: toggle}
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -243,7 +243,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {type: held alternate}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   BT&RGB:
   - {h: '$$mdi:arrow-down-bold$$', s: '$$mdi:bluetooth-connect$$'}
