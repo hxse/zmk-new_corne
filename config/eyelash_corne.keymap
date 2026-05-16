@@ -130,10 +130,10 @@
         symbol {
             display-name = "SYMBOL";
             bindings = <
-&kp LA(TAB)  &kp PLUS      &kp MINUS       &kp ASTERISK  &kp PRCNT     &kp AMPS                               &mmv MOVE_UP                     &kp PIPE      &kp RIGHT_BRACE       &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp GREATER_THAN  &kp BSPC
-&kp DEL      &kp NUMBER_1  &kp NUMBER_2    &kp NUMBER_3  &kp NUMBER_4  &kp N5                 &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp NUMBER_6  &kp N7                &kp N8             &kp N9                 &kp N0            &kp DOUBLE_QUOTES
-&kp LSHIFT   &kp AT_SIGN   &kp UNDERSCORE  &kp HASH      &kp TILDE     &kp CARET    &trans                    &mmv MOVE_DOWN                   &kp DOLLAR    &kp NON_US_BACKSLASH  &kp COMMA          &kp PERIOD             &kp SLASH         &trans
-                                           &trans        &trans        &bootloader                                                             &trans        &trans                &trans
+&kp LA(TAB)  &kp PLUS      &kp MINUS       &kp ASTERISK  &kp PRCNT     &kp AMPS                               &mmv MOVE_UP                     &kp PIPE      &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp GREATER_THAN  &kp BSPC
+&kp DEL      &kp NUMBER_1  &kp NUMBER_2    &kp NUMBER_3  &kp NUMBER_4  &kp N5                 &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp NUMBER_6  &kp N7           &kp N8             &kp N9                 &kp N0            &kp DOUBLE_QUOTES
+&kp LSHIFT   &kp AT_SIGN   &kp UNDERSCORE  &kp HASH      &kp TILDE     &kp CARET    &trans                    &mmv MOVE_DOWN                   &kp DOLLAR    &kp BACKSLASH    &kp COMMA          &kp PERIOD             &kp SLASH         &trans
+                                           &trans        &trans        &bootloader                                                             &trans        &trans           &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
