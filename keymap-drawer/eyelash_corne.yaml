@@ -185,7 +185,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
   - $
-  - \
+  - {t: \, s: '|'}
   - {t: ',', s: <}
   - .
   - {t: /, s: '?'}
