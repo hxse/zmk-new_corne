@@ -4,28 +4,14 @@
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <behaviors.dtsi>
+#include <behaviors/runtime-sensor-rotate.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
 
-// #include "rgb_by_layer.h"  // 注释掉以禁用RGB层切换功能
-
-&mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
-
-&msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
-
-&msc {
-    acceleration-exponent = <1>;      // 0
-    time-to-max-speed-ms = <100>;       // 300
-    delay-ms = <0>;                   // 0
-};
-
-&mmv {
-    time-to-max-speed-ms = <500>;
-    acceleration-exponent = <1>;
-    trigger-period-ms = <16>;
-};
+&soft_off { hold-time-ms = <2000>; };
 
 / {
     behaviors {
@@ -35,20 +21,20 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
         };
-    };
 
-    rgb_encoder: rgb_encoder {
-        compatible = "zmk,behavior-sensor-rotate";
-        #sensor-binding-cells = <0>;
-        bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
-    };
+        rsr_vol: rsr_vol {
+            compatible = "zmk,behavior-runtime-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            tap-ms = <5>;
+            cw-binding = <&kp C_VOL_UP>;
+            ccw-binding = <&kp C_VOL_DN>;
+        };
 
-    scroll_encoder: scroll_encoder {
-        compatible = "zmk,behavior-sensor-rotate";
-        #sensor-binding-cells = <0>;
-        bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-
-        tap-ms = <100>;
+        rsr_trans: rsr_trans {
+            compatible = "zmk,behavior-runtime-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            tap-ms = <0>;
+        };
     };
 
     macros {
@@ -100,7 +86,7 @@
                         &kp LCTRL  &lt 2 SPACE  &lt 4 ENTER                                               &kp ENTER  &lt 3 ENTER  &kp LSHIFT
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&rsr_vol &rsr_trans>;
         };
 
         game {
@@ -112,7 +98,7 @@
                          &kp LCTRL  &kp SPACE  &lt 3 ENTER                                               &to 0  &lt 4 ENTER  &kp LSHIFT
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+            sensor-bindings = <&rsr_vol &rsr_trans>;
         };
 
         control {
@@ -123,7 +109,7 @@
                                               &trans          &trans         &trans                                                                    &bootloader  &kp LS(ENTER)    &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&rsr_vol &rsr_trans>;
             label = "CONTROL";
         };
 
@@ -136,7 +122,7 @@
                                            &trans        &trans        &bootloader                                                             &trans        &trans           &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&rsr_vol &rsr_trans>;
         };
 
         fn {
@@ -148,7 +134,7 @@
                                   &trans          &trans          &trans                                                                         &to 1   &to 5                 &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&rsr_vol &rsr_trans>;
         };
 
         bt {
@@ -160,7 +146,7 @@
                                               &trans         &trans         &trans                                                                    &trans           &to 0            &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&rsr_vol &rsr_trans>;
         };
     };
 };
